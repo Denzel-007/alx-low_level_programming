@@ -1,22 +1,23 @@
 #include "main.h"
 /**
- * print_square - prints hashes sqaures.
- * Description - function that print sqaure.
- * @size: size of the sqaure.
- * Return: no return.
+ * print_square -> printing line
+ * @size: integer params
  */
-void print_sqaure(int size)
+void print_square(int size)
 {
-	int i, j;
+	int x, y;
 
-	for (i = 0; i < size; i++)
+	if (size <= 0)
+		_putchar('\n');
+	else
 	{
-		for (j = 0; j < size; j++)
+		for (x = 0; x < size; x++)
 		{
-			_putchar (35);
-		}
-		if (i != size - 1)
+			for (y = 0; y < size; y++)
+			{
+				_putchar(35);
+			}
 			_putchar('\n');
+		}
 	}
-	_putchar('\n');
 }
