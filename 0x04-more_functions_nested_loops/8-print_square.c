@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  * print_square - prints hashes sqaures.
+ * Description - function that print sqaure.
  * @size: size of the sqaure.
  * Return: no return.
- * Description - print sqaures
  */
 void print_sqaure(int size)
 {
