@@ -11,7 +11,7 @@ char *rot13(char *str)
 
 	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
 													'G', 'H', 'I', 'J', 'K', 'L',
-													'M', 'N', '0', 'P', 'Q', 'R',
+													'M', 'N', 'O', 'P', 'Q', 'R',
 													'S', 'T', 'U', 'V', 'W', 'X',
 													'Y', 'Z', 'a', 'b', 'c', 'd',
 													'e', 'f', 'g', 'h', 'i', 'j',
