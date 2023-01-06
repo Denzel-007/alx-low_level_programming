@@ -19,6 +19,7 @@ int main(int args, char *argv[])
 	if (c < 0)
 	{
 		printf("0\n");
+		return (0);
 	}
 	for (; c >= 0;)
 	{
