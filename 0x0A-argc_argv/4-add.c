@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 			{
 				if (str[b] < 48 || str[b] > 57)
 				{
-					printf("error\n");
+					printf("Error\n");
 					return (1);
 				}
 			}
