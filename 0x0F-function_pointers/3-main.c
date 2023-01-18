@@ -5,7 +5,7 @@
  * @argv: argument vector.
  * Return: error if number arguments is wrong
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int a = 0, b = 0, res = 0;
 	char s;
@@ -19,14 +19,14 @@ int main (int argc, char *argv[])
 	if (argv[2][1] != '\0')
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	s = argv[2][0];
 	if (s != '+' && s != '-' && s != '/' && s != '*' && s != '%')
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	a = atoi(argv[1]);
