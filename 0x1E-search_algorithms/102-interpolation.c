@@ -1,37 +1,46 @@
-#include "search_algos.h"
+#include <stdio.h>
 
-/**
- * interpolation_search - searches for a value in an array interpolation
- * @array: the input array to search integer
- * @size: size of array
- * @value: value to search
- * Return: first index where value is located or -1 if not found
- */
-int interpolation_search(int *array, size_t size, int value)
-{
-	size_t m = 0, h = size - 1, l = 0;
+int interpolation_search(int *array, size_t size, int value) {
+    if (array == NULL || size == 0) {
+        return -1;
+    }
+    
+    int low = 0;
+    int high = size - 1;
 
-	if (array == NULL)
-		return (-1);
-	while (array[h] != array[l] &&
-	       value >= array[l] &&
-	       value <= array[h])
-	{
-		m = l + (((double)(h - l) /
-			  (array[h] - array[l])) * (value - array[l]));
-		printf("Value checked array[%lu] = [%d]\n", m, array[m]);
-		if (array[m] < value)
-			l = m + 1;
-		else if (array[m] > value)
-			h = m - 1;
-		else
-			return (m);
-	}
-	m = l + (((double)(h - l) /
-		  (array[h] - array[l])) * (value - array[l]));
-	printf("Value checked array[%lu] is out of range\n", m);
-	if (array[l] == value)
-		return (l);
-	else
-		return (-1);
+    while (low <= high && value >= array[low] && value <= array[high]) {
+        size_t pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+        int comparison_value = array[pos];
+
+        printf("Comparing with value: %d\n", comparison_value);
+
+        if (comparison_value == value) {
+            return pos;
+        }
+
+        if (comparison_value < value) {
+            low = pos + 1;
+        } else {
+            high = pos - 1;
+        }
+    }
+
+    return -1;
 }
+
+int main() {
+    int array[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+    size_t size = sizeof(array) / sizeof(array[0]);
+    int value = 12;
+
+    int result = interpolation_search(array, size, value);
+
+    if (result == -1) {
+        printf("Value %d not found in the array.\n", value);
+    } else {
+        printf("Found %d at index: %d\n", value, result);
+    }
+
+    return 0;
+}
+
